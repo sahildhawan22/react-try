@@ -15,7 +15,11 @@ class App extends React.Component {
         return {...item}
       });
       let toChangeTodo = newTodos.find(todo => todo.id === id);
+      console.log("prevState.todos[id]", prevState.todos.find(todo => todo.id === id))
       toChangeTodo.completed = !toChangeTodo.completed;
+      console.log("newTodos[id]", newTodos.find(todo => todo.id === id));
+      console.log("After change: prevState.todos[id]", prevState.todos.find(todo => todo.id === id))
+      console.log("_________________________________________")
       return {todos: newTodos};
     })
   }
